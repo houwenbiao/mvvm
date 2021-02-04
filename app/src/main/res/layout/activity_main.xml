@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="userViewModel"
+            type="com.qtimes.mvvm.ui.state.UserViewModel" />
+
+        <variable
+            name="timeViewModel"
+            type="com.qtimes.mvvm.ui.state.TimerViewModel" />
+
+        <variable
+            name="mainEvent"
+            type="com.qtimes.mvvm.MainActivity.MainEventHandler" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_login1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="@{mainEvent.onClick}"
+            android:text="@={userViewModel.liveDataUser.name}" />
+
+        <Button
+            android:id="@+id/btn_login2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="@{mainEvent.onClick}"
+            android:text="@={userViewModel.liveDataUser.name}" />
+
+        <TextView
+            android:id="@+id/txt_user_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@={userViewModel.liveDataUser.password}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@={timeViewModel.liveDataTime.time}" />
+
+    </LinearLayout>
+
+</layout>
